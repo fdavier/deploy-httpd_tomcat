@@ -16,10 +16,10 @@ yum install libxml2-devel
 <p>rpmdev-setuptree to initialize rpmbuild env</p>
 
 util:
-https://fedoraproject.org/wiki/Packaging:RPMMacros
-http://doc.fedora-fr.org/wiki/La_cr%C3%A9ation_de_RPM_pour_les_nuls_:_Cr%C3%A9ation_du_fichier_SPEC_et_du_Paquetage
-http://adam.younglogic.com/2010/05/found-buildroot-in-installed-files-aborting/
-http://code.haskell.org/timber/timberc.spec
+<p>https://fedoraproject.org/wiki/Packaging:RPMMacros</p>
+<p>http://doc.fedora-fr.org/wiki/La_cr%C3%A9ation_de_RPM_pour_les_nuls_:_Cr%C3%A9ation_du_fichier_SPEC_et_du_Paquetage</p>
+<p>http://adam.younglogic.com/2010/05/found-buildroot-in-installed-files-aborting/</p>
+<p>http://code.haskell.org/timber/timberc.spec</p>
 
 #TOMCAT 8.0.36
 -set java home:
