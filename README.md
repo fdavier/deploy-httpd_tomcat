@@ -11,9 +11,9 @@ yum install libxml2-devel
 
 #PHP7 (packaging)
 <p>--> http://doc.fedora-fr.org/wiki/RPM_:_environnement_de_construction#Cr.C3.A9ation_de_l.27utilisateur</p>
-<h4>add a user for build env (ex: builder)</h4>
-install rpmdevtools
-rpmdev-setuptree to initialize rpmbuild env
+<p>add a user for build env (ex: builder)</p>
+<p>install rpmdevtools</p>
+<p>rpmdev-setuptree to initialize rpmbuild env</p>
 
 util:
 https://fedoraproject.org/wiki/Packaging:RPMMacros
