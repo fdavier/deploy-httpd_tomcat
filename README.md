@@ -22,11 +22,11 @@ util:
 <p>http://code.haskell.org/timber/timberc.spec</p>
 
 #TOMCAT 8.0.36
--set java home:
+<p>-set java home:</p>
 export JAVA_HOME="/usr/java/jdk1.8.0_91"
--set catalina home:
+<p>-set catalina home:</p>
 export CATALINA_HOME="/opt/apache-tomcat-8.0.36"
-wget http://apache.websitebeheerjd.nl/tomcat/tomcat-8/v8.0.36/bin/apache-tomcat-8.0.36.tar.gz
+<p>wget http://apache.websitebeheerjd.nl/tomcat/tomcat-8/v8.0.36/bin/apache-tomcat-8.0.36.tar.gz</p>
 mv to /opt
 
 #MOD_JK: Tomcat Connectors JK 1.2
