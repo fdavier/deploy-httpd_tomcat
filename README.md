@@ -10,7 +10,7 @@ jdk-8u91 (manual download or create direct link and install rpm -ivh)
 yum install libxml2-devel
 
 #PHP7 (packaging)
---> http://doc.fedora-fr.org/wiki/RPM_:_environnement_de_construction#Cr.C3.A9ation_de_l.27utilisateur
+<p>--> http://doc.fedora-fr.org/wiki/RPM_:_environnement_de_construction#Cr.C3.A9ation_de_l.27utilisateur</p>
 add a user for build env (ex: builder)
 install rpmdevtools
 rpmdev-setuptree to initialize rpmbuild env
