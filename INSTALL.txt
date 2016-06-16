@@ -19,7 +19,7 @@ cd rpmbuild
 rpmdev-setuptree to initialize rpmbuild env
 copy php7.spec in SPECS
 download and copy php-7.0.7.tar.gz in SOURCES
-Create TMP directory in rpmbuild dir
+wget -O php-7.0.7.tar.gz  http://fr2.php.net/get/php-7.0.7.tar.gz/from/this/mirror
 go to SPECS and launch 'rpmbuild -ba php7.spec'
 go to RPMS and take package ....
 
