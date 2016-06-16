@@ -4,7 +4,7 @@ Steps to package and deploy
 jdk-8u91 (manual download or create direct link and install rpm -ivh)
 
 #HTTPD
-2.4.6 (yum install httpd + devel)
+2.4.6 (yum install httpd-devel)
 
 #LIBXML2-DEVEL
 yum install libxml2-devel
