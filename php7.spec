@@ -1,3 +1,5 @@
+%define debug_package %{nil}
+
 Name:           php
 Version:        7.0.7
 Release:        1
@@ -18,6 +20,7 @@ suited for Web development and can be embedded into HTML.
 %setup -q
 
 %build
+EXTENSION_DIR=%{_libdir}/php/modules; export EXTENSION_DIR
 %configure --with-apxs2=/usr/bin/apxs
 
 make %{?_smp_mflags}
@@ -37,17 +40,6 @@ export QA_SKIP_BUILD_ROOT
 rm -rf %{buildroot}
 
 %files
-/.channels/.alias/pear.txt
-/.channels/.alias/pecl.txt
-/.channels/.alias/phpdocs.txt
-/.channels/__uri.reg
-/.channels/doc.php.net.reg
-/.channels/pear.php.net.reg
-/.channels/pecl.php.net.reg
-/.depdb
-/.depdblock
-/.filemap
-/.lock
 %{_bindir}/pear
 %{_bindir}/peardev
 %{_bindir}/pecl
@@ -64,5 +56,10 @@ rm -rf %{buildroot}
 %{_libdir}/httpd/
 %{_prefix}/include/php/
 %{_mandir}/man1/
+%exclude /.channels
+%exclude /.depdb
+%exclude /.depdblock
+%exclude /.filemap
+%exclude /.lock
 
 %config /etc/httpd/conf/httpd*
