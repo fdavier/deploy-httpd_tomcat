@@ -6,9 +6,9 @@ Summary:        PHP is a widely-used general-purpose scripting language.
 Group:          Development/Languages
 License:        PHP License v3.01
 URL:            http://www.php.net
-Source0:        /home/builder/rpmbuild/SOURCES/%{name}-%{version}.tar.gz
-BuildRoot:      /home/builder/rpmbuild/TMP/%{name}-%{version}-%{release}-buildroot
-BuildRequires: httpd-devel
+Source0:        %{name}-%{version}.tar.gz
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildRequires: httpd-devel libxml2-devel
 
 %description
 PHP is a widely-used general-purpose scripting language that is especially
@@ -18,14 +18,13 @@ suited for Web development and can be embedded into HTML.
 %setup -q
 
 %build
-EXTENSION_DIR=%{_libdir}/php/modules; export EXTENSION_DIR
 %configure --with-apxs2=/usr/bin/apxs
 
 make %{?_smp_mflags}
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}%{_initrddir}
+mkdir -p %{buildroot}
 mkdir -p /home/builder/rpmbuild/BUILDROOT/php-7.0.7-1.x86_64/etc/httpd/conf/
 cp /etc/httpd/conf/httpd.conf /home/builder/rpmbuild/BUILDROOT/php-7.0.7-1.x86_64/etc/httpd/conf/
 %{__make} install INSTALL_ROOT="%{buildroot}"
@@ -60,9 +59,10 @@ rm -rf %{buildroot}
 %{_bindir}/phpdbg
 %{_bindir}/phpize
 %{_sysconfdir}/pear.conf
-%{_sysconfdir}/httpd/conf/
 %{_libdir}/build/
 %{_libdir}/php/
 %{_libdir}/httpd/
 %{_prefix}/include/php/
 %{_mandir}/man1/
+
+%config /etc/httpd/conf/httpd*
