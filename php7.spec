@@ -34,6 +34,7 @@ mkdir -p /home/builder/rpmbuild/BUILDROOT/php-7.0.7-1.x86_64/etc/httpd/conf/
 cp /etc/httpd/conf/httpd.conf /home/builder/rpmbuild/BUILDROOT/php-7.0.7-1.x86_64/etc/httpd/conf/
 %{__make} install INSTALL_ROOT="%{buildroot}"
 sed -i 's/\/home\/builder\/rpmbuild\/BUILDROOT\/php-7.0.7-1.x86_64//' /home/builder/rpmbuild/BUILDROOT/php-7.0.7-1.x86_64/etc/httpd/conf/httpd.conf
+sed -i "/libphp7.so/a\<FilesMatch \"\.ph(p[2-6]?|tml)$\">\n  SetHandler application/x-httpd-php\n</FilesMatch>" httpd.conf
 install -m 0755 php.ini-production %{buildroot}/%{_sysconfdir}/php.ini
 install -m 0755 modules/*.so %{buildroot}/%{_libdir}/php/extensions
 
